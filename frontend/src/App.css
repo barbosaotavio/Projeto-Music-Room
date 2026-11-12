@@ -79,3 +79,43 @@ body {
 .room button:hover {
   background-color: #7040d8;
 }
+
+.room input {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  padding: 13px;
+  margin-top: 20px;
+  background-color: #101018;
+  border: 1px solid #44445a;
+  border-radius: 8px;
+  color: white;
+  font-size: 15px;
+  outline: none;
+}
+
+.room input:focus {
+  border-color: #a970ff;
+}
+
+.room-info {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #29213d;
+  border-radius: 10px;
+}
+
+.room-info h3 {
+  color: #a970ff;
+  margin-bottom: 15px;
+}
+
+.room-info p {
+  margin-top: 12px;
+  color: white;
+}
+
+.room-info strong {
+  color: #c49aff;
+  font-size: 20px;
+}

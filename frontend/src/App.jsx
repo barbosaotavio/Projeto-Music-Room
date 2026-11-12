@@ -1,20 +1,33 @@
 
 import { useState } from 'react'
+import Header from './components/Header'
+import CreateRoom from './components/CreateRoom'
 import './App.css'
 
 function App() {
-  const [salaCriada, setSalaCriada] = useState(false)
+  const [nomeSala, setNomeSala] = useState('')
+  const [sala, setSala] = useState(null)
 
   function criarSala() {
-    setSalaCriada(true)
+    if (nomeSala.trim() === '') {
+      alert('Digite um nome para sua sala!')
+      return
+    }
+
+    const codigo = Math.random()
+      .toString(36)
+      .substring(2, 8)
+      .toUpperCase()
+
+    setSala({
+      nome: nomeSala,
+      codigo: codigo
+    })
   }
 
   return (
     <div className="app">
-      <header className="header">
-        <h1>🎧 Music Room</h1>
-        <p>Sua música, seus amigos, sua sala.</p>
-      </header>
+      <Header />
 
       <main className="main">
         <h2>Bem-vindo ao Music Room!</h2>
@@ -24,19 +37,12 @@ function App() {
           favoritas com seus amigos.
         </p>
 
-        <div className="room">
-          <h3>Minha sala de música</h3>
-
-          {salaCriada ? (
-            <p>Sua sala foi criada com sucesso! 🎵</p>
-          ) : (
-            <p>Você ainda não criou uma sala.</p>
-          )}
-
-          <button onClick={criarSala}>
-            Criar sala
-          </button>
-        </div>
+        <CreateRoom
+          nomeSala={nomeSala}
+          setNomeSala={setNomeSala}
+          criarSala={criarSala}
+          sala={sala}
+        />
       </main>
     </div>
   )
