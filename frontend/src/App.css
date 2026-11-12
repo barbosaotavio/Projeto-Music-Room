@@ -62,3 +62,20 @@ body {
 .room p {
   color: #bbb;
 }
+
+
+.room button {
+  background-color: #8b5cf6;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.room button:hover {
+  background-color: #7040d8;
+}
